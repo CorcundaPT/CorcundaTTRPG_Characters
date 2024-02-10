@@ -2,15 +2,37 @@
 <html>
     <head>
         <link rel="stylesheet" href="style/main.css">
-        <link rel="stylesheet" href="style/backpack.css">
+        <link rel="stylesheet" href="style/dnd/ability.css">
+        <link rel="stylesheet" href="style/dnd/backpack.css">
         <script src="script/main.js"></script>
-        <script src="script/backpack.js"></script>
+        <script src="script/dnd/ability.js"></script>
+        <script src="script/dnd/backpack.js"></script>
     </head>
-    <body>
+    <!-- modCalculation(str, dex, con, int, wis, cha) -->
+    <body onload="modCalculate(15,14,16,11,12,10)">
         <nav></nav>
         <div>
             <h1>Broll</h1>
             <div class="content">
+                <!-- Ability Score tab -->
+                <table>
+                    <tr>
+                        <td>Strength</td>
+                        <td>Dexterity</td>
+                        <td>Constitution</td>
+                        <td>intelligence</td>
+                        <td>Wisdom</td>
+                        <td>Charisma</td>
+                    </tr>
+                    <tr>
+                        <td id="abilityStr"></td>
+                        <td id="abilityDex"></td>
+                        <td id="abilityCon"></td>
+                        <td id="abilityInt"></td>
+                        <td id="abilityWis"></td>
+                        <td id="abilityCha"></td>
+                    </tr>
+                </table>
                 <!-- Backpack tab -->
                 <h2 id="backpack" onclick="toggleTab(id)" class="toggleButton">Backpack</h2>
                 <div id="backpackTab" class="backpack_tab">
