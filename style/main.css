@@ -1,0 +1,35 @@
+body {
+    user-select: none;
+
+    font-family: 'Times New Roman', Times, serif;
+
+    background-color: #3a3a3a;
+    color: #cccccc;
+}
+
+h1, h2, h3 {
+
+    margin: 10px 0px;
+}
+.toggleButton:hover {
+    cursor: pointer;
+
+    color: #ffffff;
+}
+
+body p, body ul {
+    margin: 6px 0px;
+}
+
+.content {
+    width: 100%;
+    max-width: 1000px;
+    
+    padding: 20px 50px;
+    margin: auto;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 10px 0px 20px -15px #000000,
+                -10px 0px 20px -15px #000000;
+    
+}

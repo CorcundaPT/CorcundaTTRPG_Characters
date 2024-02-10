@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/backpack.css">
+        <script src="script/main.js"></script>
+        <script src="script/backpack.js"></script>
+    </head>
+    <body>
+        <nav></nav>
+        <div>
+            <h1>Broll</h1>
+            <div class="content">
+                <!-- Backpack tab -->
+                <h2 id="backpack" onclick="toggleTab(id)" class="toggleButton">Backpack</h2>
+                <div id="backpackTab" class="backpack_tab">
+                    <!-- Money -->
+                    <h3 id="backpackMoney" onclick="toggleMoney(id)" class="toggleButton">Money</h3>
+                    <table id="backpackMoneyTab" class="backpack_money">
+                        <tr class="backpack_money_top">
+                            <td>CP</td>
+                            <td>SP</td>
+                            <td>GP</td>
+                            <td>PP</td>
+                        </tr>
+                        <tr class="backpack_money_bottom">
+                            <td>28</td>
+                            <td>50</td>
+                            <td>61</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+
+                    <!-- Equipment -->
+                    <h3 id="backpackEquipment" onclick="toggleTab(id)" class="toggleButton">Equipment</h3>
+                    <div id="backpackEquipmentTab" class="backpack_item_tab">
+                        <!-- Cutelo +2 -->
+                        <p id="backpackCuteloExtensivel" onclick="toggleWindow(id)" class="toggleButton">Cutelo Extensível +2</p>
+                        <ul id="backpackCuteloExtensivelDesc" class="backpack_item_description">
+                            <li>1d6 + 2 Slashing</li>
+                            <li>Finesse</li>
+                            <li>Light</li>
+                            <li>This weapon can be extended and gain the following benefits:
+                                <ul>
+                                    <li>2d6 + 2 Slashing</li>
+                                    <li>Heavy</li>
+                                    <li>Two-Handed</li>
+                                </ul>
+                            </li>
+                            <li>While attuned, when this weapon hit a target, it heals the user for 1d12, once per turn.</li>
+                        </ul>
+
+                        <!-- 2x Hand-Axes -->
+                        <p id="backpackHandAxe" onclick="toggleWindow(id)" class="toggleButton">Hand-Axe (2)</p>
+                        <ul id="backpackHandAxeDesc" class="backpack_item_description">
+                            <li>1d6 Slashing</li>
+                            <li>Light</li>
+                            <li>Throw [20/60]</li>
+                        </ul>
+
+                        <!-- Hook -->
+                        <p id="backpackHook" onclick="toggleWindow(id)" class="toggleButton">Hook</p>
+                        <ul id="backpackHookDesc" class="backpack_item_description">
+                            <li>1d8 Piercing</li>
+                        </ul>
+
+                        <!-- 2x Javelins -->
+                        <p id="backpackJavelin" onclick="toggleWindow(id)" class="toggleButton">Javelin (2)</p>
+                        <ul id="backpackJavelinDesc" class="backpack_item_description">
+                            <li>1d6 Piercing</li>
+                            <li>Throw [30/120]</li>
+                        </ul>
+
+                        <!-- Shield "Capitã Maria" -->
+                        <p id="backpackCapitaMaria" onclick="toggleWindow(id)" class="toggleButton">Shield "Capitã Maria"</p>
+                        <ul id="backpackCapitaMariaDesc" class="backpack_item_description">
+                            <li>+2AC</li>
+                            <li>As an action, the shield will spread it's arms and grapple the target</li>
+                        </ul>
+
+                        <!-- War-Hammer -->
+                        <p id="backpackWarHammer" onclick="toggleWindow(id)" class="toggleButton">War-Hammer</p>
+                        <ul id="backpackWarHammerDesc" class="backpack_item_description">
+                            <li>1d8 Bludgeoning</li>
+                            <li>Versatile [1d10]</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools -->
+                    <h3 id="backpackTools" onclick="toggleTab(id)" class="toggleButton">Tools</h3>
+                    <div id="backpackToolsTab" class="backpack_item_tab">
+                        <!-- Disguise Kit -->
+                        <p id="backpackDisguiseKit" onclick="toggleWindow(id)" class="toggleButton">Disguise Kit</p>
+                        <p id="backpackDisguiseKitDesc" class="backpack_item_description">Use it to disguise yourself or someone else.</p>
+                    </div>
+
+                    <!-- Items with no tag -->
+                    <h3 id="backpackMisc" onclick="toggleTab(id)" class="toggleButton">Misc</h3>
+                    <div id="backpackMiscTab" class="backpack_item_tab">
+                        <!-- Um pendente com uma cruz -->
+                        <p id="backpackBarrilCafe" onclick="toggleWindow(id)" class="toggleButton">Barril pequeno de café</p>
+                        <p id="backpackBarrilCafeDesc" class="backpack_item_description">Comprado para o Erik poder beber café durante a viagem.</p>
+
+                        <!-- Explorer's Pack -->
+                        <p id="backpackExplorerPack" onclick="toggleWindow(id)" class="toggleButton">Explorer's Pack</p>
+                        <ul id="backpackExplorerPackDesc" class="backpack_item_description">
+                            <li>Backpack</li>
+                            <li>Bedroll</li>
+                            <li>Mess Kit</li>
+                            <li>Tinderbox</li>
+                            <li>Torches (7)</li>
+                            <li>Rations (9 days)</li>
+                            <li>Waterskin</li>
+                            <li>50ft Hempem Rope</li>
+                        </ul>
+                        
+                        <!-- 9x Facas -->
+                        <p id="backpackFacasComuns" onclick="toggleWindow(id)" class="toggleButton">Facas Comuns (9)</p>
+                        <p id="backpackFacasComunsDesc" class="backpack_item_description">Facas vulgar usada como talher.</p>
+
+                        <!-- 4x Joias Variadas -->
+                        <p id="backpackJoiasVariadas" onclick="toggleWindow(id)" class="toggleButton">Joias variadas (4)</p>
+                        <p id="backpackJoiasVariadasDesc" class="backpack_item_description">Vários tipos de jóias com preço por definir.</p>
+                        
+                        <!-- Um pendente com uma cruz -->
+                        <p id="backpackPendenteComCruz" onclick="toggleWindow(id)" class="toggleButton">Pendente com uma cruz</p>
+                        <p id="backpackPendenteComCruzDesc" class="backpack_item_description">Um pendente dado pelo Rei de The Cross.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
