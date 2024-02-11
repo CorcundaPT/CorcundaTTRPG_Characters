@@ -15,16 +15,16 @@
             <h1>Broll</h1>
             <div class="content">
                 <!-- Ability Score tab -->
-                <table>
-                    <tr>
-                        <td>Strength</td>
-                        <td>Dexterity</td>
-                        <td>Constitution</td>
-                        <td>intelligence</td>
-                        <td>Wisdom</td>
-                        <td>Charisma</td>
+                <table class="ability_score">
+                    <tr class="ability_score_top">
+                        <td>STR</td>
+                        <td>DEX</td>
+                        <td>CON</td>
+                        <td>INT</td>
+                        <td>WIS</td>
+                        <td>CHA</td>
                     </tr>
-                    <tr>
+                    <tr class="ability_score_bottom">
                         <td id="abilityStr"></td>
                         <td id="abilityDex"></td>
                         <td id="abilityCon"></td>
@@ -33,6 +33,31 @@
                         <td id="abilityCha"></td>
                     </tr>
                 </table>
+                <!-- Stats Tab -->
+                <h2 id="abilityStats" onclick="toggleTab(id)" class="toggleButton">Stats</h2>
+                <div id="abilityStatsTab" class="ability_stats">
+                    <!-- Skill table -->
+                    <div class="ability_skill">
+                        <p><label id="abilityAcrobatics">1</label> Acrobatics</p>
+                        <p><label id="abilityAnimalHandling">1</label> Animal Handling</p>
+                        <p><label id="abilityArcana">1</label> Arcana</p>
+                        <p><label id="abilityAthletics">1</label> Athletics</p>
+                        <p><label id="abilityDeception">1</label> Deception</p>
+                        <p><label id="abilityHistory">1</label> History</p>
+                        <p><label id="abilityInsight">1</label> Insight</p>
+                        <p><label id="abilityIntimidation">1</label> Intimidation</p>
+                        <p><label id="abilityInvestigation">1</label> Investigation</p>
+                        <p><label id="abilityMedicine">1</label> Medicine</p>
+                        <p><label id="abilityNature">1</label> Nature</p>
+                        <p><label id="abilityPerception">1</label> Perception</p>
+                        <p><label id="abilityPerformance">1</label> Performance</p>
+                        <p><label id="abilityPersuasion">1</label> Persuasion</p>
+                        <p><label id="abilityReligion">1</label> Religion</p>
+                        <p><label id="abilitySleightOfHands">1</label> Sleight of Hands</p>
+                        <p><label id="abilityStealth">1</label> Stealth</p>
+                        <p><label id="abilitySurvival">1</label> Survival</p>
+                    </div>
+                </div>
                 <!-- Backpack tab -->
                 <h2 id="backpack" onclick="toggleTab(id)" class="toggleButton">Backpack</h2>
                 <div id="backpackTab" class="backpack_tab">

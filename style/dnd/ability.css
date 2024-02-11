@@ -1,0 +1,53 @@
+/* all boxes with the same property */
+.ability_score, .ability_score_bottom td,.ability_stats, .ability_skill p {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.15); 
+}
+
+/* Abiltiy Score table */
+.ability_score {
+    border-spacing: 10px 0px;
+    
+    width: 100%;
+    padding: 5px;
+    
+    text-align: center;
+    
+    border-radius: 10px;
+}
+/* Type of the coin */
+.ability_score_top td {
+    margin: 10px;
+    padding: 0px 20px;
+
+    font-size: 12px;
+}
+/* Value of each coin */
+.ability_score_bottom td {
+    margin: 10px;
+    padding: 5px 20px;
+
+    font-weight: bold;
+
+    border-radius: 0px 0px 5px 5px;
+}
+
+/* Skill table */
+.ability_stats {
+    display: flex;
+
+    width: 100%;
+    padding: 0px 5px;
+
+    border-radius: 10px;
+}
+.ability_skill {
+    width: 20%;
+
+    display: block;
+}
+.ability_skill p {
+    padding: 3px 10px;
+    
+    border-radius: 5px;
+}

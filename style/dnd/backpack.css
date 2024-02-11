@@ -5,8 +5,7 @@
 /* all boxes with the same property */
 .backpack_money, .backpack_money_bottom td, .backpack_item_tab, .backpack_item_description {
     border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0.15);
-    
+    background-color: rgba(0, 0, 0, 0.15); 
 }
 
 /* Money table */

@@ -7,9 +7,16 @@ body {
     color: #cccccc;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 h1, h2, h3 {
 
     margin: 10px 0px;
+}
+h3 {
+    margin-left: 20px;
 }
 .toggleButton:hover {
     cursor: pointer;
