@@ -70,15 +70,40 @@
                         </div>
                         <div>
                             <p class="ability_character_top">Speed</p>
-                            <p class="ability_character_bottom">40ft speed</p>
+                            <p class="ability_character_bottom">40ft walk</p>
                         </div>
                         <!-- Action List -->
                         <div class="action_item_tab">
                             <p class="ability_character_top">Action List</p>
                             <!-- Ancestral Protection action -->
                             <div class="action_item_type_passive">
-                                <p id="actionHandAxe" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Ancestral Protection <small>(passive)</small></p>
-                                <p id="actionHandAxeDesc" class="action_item_description">Every turn, the first creature you hit, get disadvantage on attack rolls against creatures other than you, and even if the target still hit, that creature has resistance to the damage dealt.</p>
+                                <p id="actionAncestralProtection" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Ancestral Protection <small>(passive)</small></p>
+                                <p id="actionAncestralProtectionDesc" class="action_item_description">Every turn, the first creature you hit, get disadvantage on attack rolls against creatures other than you, and even if the target still hit, that creature has resistance to the damage dealt.</p>
+                            </div>
+                            <!-- Danger Sense action -->
+                            <div class="action_item_type_passive">
+                                <p id="actionDangerSense" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Danger Sense <small>(passive)</small></p>
+                                <p id="actionDangerSenseDesc" class="action_item_description">Advantage on Dexterity Saving Throws against effects that you can see.</p>
+                            </div>
+                            <!-- Extra Attack action -->
+                            <div class="action_item_type_passive">
+                                <p id="actionExtraAttack" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Extra Attack <small>(passive)</small></p>
+                                <p id="actionExtraAttackDesc" class="action_item_description">Attack twice on an Attack action.</p>
+                            </div>
+                            <!-- Feral Instinct action -->
+                            <div class="action_item_type_passive">
+                                <p id="actionFeralInstinct" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Feral Instinct <small>(passive)</small></p>
+                                <p id="actionFeralInstinctDesc" class="action_item_description">Advantage on Initiative rolls and you can't be surprised if you enter rage at the start and you aren't Incapacitated.</p>
+                            </div>
+                            <!-- Instinctive Pounce action -->
+                            <div class="action_item_type_passive">
+                                <p id="actionInstinctivePounce" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Instinctive Pounce <small>(passive)</small></p>
+                                <p id="actionInstinctivePounceDesc" class="action_item_description">When you enter rage, you can move up to half your movement.</p>
+                            </div>
+                            <!-- Reckless Attack action -->
+                            <div class="action_item_type_passive">
+                                <p id="actionRecklessAttack" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Reckless Attack <small>(passive)</small></p>
+                                <p id="actionRecklessAttackDesc" class="action_item_description">Every first attack each turn, you can choose to gain advantage on all Attack rolls this turn, doing so, gives advantage on Attack rolls against you until the start of your next turn.</p>
                             </div>
                             <!-- Cutelo +2 action -->
                             <div class="action_item_type_action">
@@ -134,6 +159,32 @@
                                 <ul id="actionWarHammerDesc" class="action_item_description">
                                     <li>1d8 Bludgeoning</li>
                                     <li>Versatile [1d10]</li>
+                                </ul>
+                            </div>
+                            <!-- Rage bonus action -->
+                            <div class="action_item_type_bonusAction">
+                                <p id="actionRage" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Rage <small>(bonus action)</small></p>
+                                <ul id="actionRageDesc" class="action_item_description">
+                                    <li>Can’t wear Heavy Armor, cast spells or concentrate</li>
+                                    <li>Advantage on Strength check and Strength saving throws.</li>
+                                    <li>+2 Melee Weapon Damage Rolls</li>
+                                    <li>Resistance to Bludgeoning, Piercing, and Slashing damage.</li>
+                                </ul>
+                            </div>
+                            <!-- Sentinal reaction -->
+                            <div class="action_item_type_reaction">
+                                <p id="actionSentinal" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/tool.png" height="10px"> Sentinel <small>(reaction)</small></p>
+                                <ul id="actionSentinalDesc" class="action_item_description">
+                                    <li>Opportunity attacks that hit reduced the creature’s speed become to 0.</li>
+                                    <li>Opportunity attack provoked even when disengage.</li>
+                                    <li>As a reaction, when a creature within 5ft makes an target other than you (and without this feat), you can make a melee weapon attack against the attacking creature.</li>
+                                </ul>
+                            </div>
+                            <!-- Spirit Shield reaction -->
+                            <div class="action_item_type_reaction">
+                                <p id="actionSpiritShield" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Spirit Shield <small>(reaction)</small></p>
+                                <ul id="actionSpiritShieldDesc" class="action_item_description">
+                                    <li>Reduce 2d6 damage of a creature you can see within 30ft of you.</li>
                                 </ul>
                             </div>
                         </div>
