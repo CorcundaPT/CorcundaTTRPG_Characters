@@ -1,30 +1,34 @@
 /* all boxes with the same property */
-.ability_score, .ability_score_bottom td,.ability_stats, .ability_skill p {
+.ability_score, .ability_score_bottom, .ability_character_bottom, .ability_stats, .ability_skill p {
     border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0.15); 
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 /* Abiltiy Score table */
 .ability_score {
-    border-spacing: 10px 0px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
     
     width: 100%;
-    padding: 5px;
+
+    padding: 0px 5px;
     
     text-align: center;
     
     border-radius: 10px;
 }
+.ability_score div {
+    margin: 5px;
+}
 /* Type of the coin */
-.ability_score_top td {
-    margin: 10px;
+.ability_score_top, .ability_character_top {
     padding: 0px 20px;
+    margin: 0px 0px -5px 0px;
 
     font-size: 12px;
 }
 /* Value of each coin */
-.ability_score_bottom td {
-    margin: 10px;
+.ability_score_bottom, .ability_character_bottom {
     padding: 5px 20px;
 
     font-weight: bold;
@@ -32,19 +36,105 @@
     border-radius: 0px 0px 5px 5px;
 }
 
-/* Skill table */
+/* Stats tab */
 .ability_stats {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 20%;
 
     width: 100%;
     padding: 0px 5px;
 
     border-radius: 10px;
 }
-.ability_skill {
-    width: 20%;
 
+/* Character table */
+.ability_character {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 100px;
+
+    padding: 0px 5px;
+    
+    text-align: center;
+    
+    border-radius: 10px;
+}
+.ability_character div {
+    margin: 5px;
+}
+/* action tabs */
+.action_item_tab {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.action_item_tab p {
+    margin: auto;
+}
+.action_item_tab .toggleButton {
+    padding-left: 10px;
+
+    text-align: left;
+}
+.action_item_tab p small {
+    font-style: italic;
+
+    color: rgba(255, 255, 255, 0.3);
+}
+.action_item_type_action {
+    border: 1px solid rgba(41, 197, 27, 0.3);
+    border-radius: 5px;
+    background-color: rgba(28, 218, 53, 0.15);
+}
+.action_item_type_bonusAction {
+    border: 1px solid rgba(233, 212, 23, 0.3);
+    border-radius: 5px;
+    background-color: rgba(218, 167, 28, 0.15);
+}
+.action_item_type_reaction {
+    border: 1px solid rgba(27, 172, 197, 0.3);
+    border-radius: 5px;
+    background-color: rgba(28, 148, 218, 0.15);
+}
+.action_item_type_time {
+    border: 1px solid rgba(223, 17, 205, 0.3);
+    border-radius: 5px;
+    background-color: rgba(135, 14, 233, 0.15);
+}
+.action_item_type_passive {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+/* action description */
+.action_item_description {
+    display: none;
+
+    margin: 0px;
+    margin-top: 0px;
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 10px;
+
+    text-align: justify;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+/* action description for p */
+p.action_item_description {
+    display: none;
+
+    padding-left: 10px;
+
+    font-style: italic;
+}
+
+/* Skill table */
+.ability_skill {
     display: block;
+
+    margin: 5px;
 }
 .ability_skill p {
     padding: 3px 10px;

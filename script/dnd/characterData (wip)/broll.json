@@ -1,0 +1,88 @@
+{
+    "name": "Broll",
+    "level": 8,
+    
+    "-commentAbility": "ABILITY SCORE",
+    "ability": {
+        "strength": 15,
+        "dexterity": 14,
+        "constitution": 16,
+        "intelligency": 11,
+        "wisdom": 12,
+        "charisma": 10
+    },
+
+    "-commentSave": "SAVING THROW PROFICIENCY",
+    "savingThrow": {
+        "strength": 1,
+        "dexterity": 0,
+        "constitution": 1,
+        "intelligency": 0,
+        "wisdom": 0,
+        "charisma": 0
+    },
+
+    "-commentSkill": "SKILL PROFICIENCY",
+    "skill": {
+        "acrobatics": 0,
+        "animalHandling": 0,
+        "arcana": 0,
+        "athletics": 0,
+        "deception": 1,
+        "history": 0,
+        "insight": 0,
+        "intimidation": 1,
+        "investigation": 0,
+        "medicine": 0,
+        "nature": 1,
+        "perception": 0,
+        "performance": 1,
+        "persuasion": 0,
+        "religion": 0,
+        "sleightOfHands": 0,
+        "stealth": 0,
+        "survival": 1
+    },
+
+    "-commentMoney": "CURRENCY TABLE",
+    "currency": {
+        "CP": 28,
+        "SP": 50,
+        "GP": 61,
+        "PP": 0
+    },
+
+    "-commentBackpack": "BACKPACK LIST",
+    "backpack": [
+        {
+            "name": "Cutelo Extensível +2",
+            "quantity": 1,
+            "effect": ["1d6 + 2 Slashing", "Finesse", "Light", "Can be extended becoing a new weapon: 2d6 + 2 Slashing; Heavy; Two-Handed", "While attuned, when the weapon hit a creature, heal the wielder for 1d12, once per turn"]
+        },
+        {
+            "name": "Hand-Axe",
+            "quantity": 2,
+            "effect": ["1d6 Slashing", "Light", "Throw (20/60)"]
+        },
+        {
+            "name": "Hook",
+            "quantity": 1,
+            "effect": ["1d8 Piercing"]
+        },
+        {
+            "name": "Javelin",
+            "quantity": 2,
+            "effect": ["1d6 Piercing", "Throw (30/120)"]
+        },
+        {
+            "name": "Shield, Capitã Maria",
+            "quantity": 1,
+            "effect": ["+2AC"]
+        },
+        {
+            "name": "War-Hammer",
+            "quantity": 1,
+            "effect": []
+        }
+    ]
+}

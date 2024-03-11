@@ -1,60 +1,162 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Broll</title>
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/dnd/ability.css">
         <link rel="stylesheet" href="style/dnd/backpack.css">
         <script src="script/main.js"></script>
         <script src="script/dnd/ability.js"></script>
         <script src="script/dnd/backpack.js"></script>
+        <script src="script/dnd/character.json"></script>
     </head>
-    <!-- modCalculation(str, dex, con, int, wis, cha) -->
-    <body onload="modCalculate(15,14,16,11,12,10)">
+    <!-- modCalculation(level, str, dex, con, int, wis, cha) -->
+    <body onload="modCalculate(8,15,14,16,11,12,10)">
         <nav></nav>
         <div class="content">
             <h1>Broll</h1>
             <div>
                 <!-- Ability Score tab -->
-                <table class="ability_score">
-                    <tr class="ability_score_top">
-                        <td>STR</td>
-                        <td>DEX</td>
-                        <td>CON</td>
-                        <td>INT</td>
-                        <td>WIS</td>
-                        <td>CHA</td>
-                    </tr>
-                    <tr class="ability_score_bottom">
-                        <td id="abilityStr"></td>
-                        <td id="abilityDex"></td>
-                        <td id="abilityCon"></td>
-                        <td id="abilityInt"></td>
-                        <td id="abilityWis"></td>
-                        <td id="abilityCha"></td>
-                    </tr>
-                </table>
+                <div class="ability_score">
+                    <div>
+                        <p class="ability_score_top">STR</p>
+                        <p id="abilityStr" class="ability_score_bottom"></p>
+                    </div>
+                    <div>
+                        <p class="ability_score_top">DEX</p>
+                        <p id="abilityDex" class="ability_score_bottom"></p>
+                    </div>
+                    <div>
+                        <p class="ability_score_top">CON</p>
+                        <p id="abilityCon" class="ability_score_bottom"></p>
+                    </div>
+                    <div>
+                        <p class="ability_score_top">INT</p>
+                        <p id="abilityInt" class="ability_score_bottom"></p>
+                    </div>
+                    <div>
+                        <p class="ability_score_top">WIS</p>
+                        <p id="abilityWis" class="ability_score_bottom"></p>
+                    </div>
+                    <div>
+                        <p class="ability_score_top">CHA</p>
+                        <p id="abilityCha" class="ability_score_bottom"></p>
+                    </div>
+                </div>
                 <!-- Stats Tab -->
-                <h2 id="abilityStats" onclick="toggleTab(id)" class="toggleButton">Stats</h2>
+                <h2 id="abilityStats" onclick="toggleGrid(id)" class="toggleButton">Stats</h2>
                 <div id="abilityStatsTab" class="ability_stats">
+                    <!-- Character Stats -->
+                    <div class="ability_character">
+                        <div>
+                            <p class="ability_character_top">Maximum Hit Points</p>
+                            <p class="ability_character_bottom">110</p>
+                        </div>
+                        <div>
+                            <p class="ability_character_top">Maximum Hit Dice</p>
+                            <p class="ability_character_bottom">8d12</p>
+                        </div>
+                        <div>
+                            <p class="ability_character_top">ArmorClass</p>
+                            <p class="ability_character_bottom">17</p>
+                        </div>
+                        <div>
+                            <p class="ability_character_top">Proficiency Bonus</p>
+                            <p id="proficiency" class="ability_character_bottom"></p>
+                        </div>
+                        <div>
+                            <p class="ability_character_top">Initiative</p>
+                            <p id="initiative" class="ability_character_bottom"></p>
+                        </div>
+                        <div>
+                            <p class="ability_character_top">Speed</p>
+                            <p class="ability_character_bottom">40ft speed</p>
+                        </div>
+                        <!-- Action List -->
+                        <div class="action_item_tab">
+                            <p class="ability_character_top">Action List</p>
+                            <!-- Ancestral Protection action -->
+                            <div class="action_item_type_passive">
+                                <p id="actionHandAxe" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Ancestral Protection <small>(passive)</small></p>
+                                <p id="actionHandAxeDesc" class="action_item_description">Every turn, the first creature you hit, get disadvantage on attack rolls against creatures other than you, and even if the target still hit, that creature has resistance to the damage dealt.</p>
+                            </div>
+                            <!-- Cutelo +2 action -->
+                            <div class="action_item_type_action">
+                                <p id="actionCuteloExtensivel" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/weapon.png" height="10px"> Cutelo Extensível +2 <small>(action)</small></p>
+                                <ul id="actionCuteloExtensivelDesc" class="action_item_description">
+                                    <li>1d6 + 2 Slashing</li>
+                                    <li>Finesse</li>
+                                    <li>Light</li>
+                                    <li>This weapon can be extended and gain the following benefits:
+                                        <ul>
+                                            <li>2d6 + 2 Slashing</li>
+                                            <li>Heavy</li>
+                                            <li>Two-Handed</li>
+                                        </ul>
+                                    </li>
+                                    <li>While attuned, when this weapon hit a target, it heals the user for 1d12, once per turn.</li>
+                                </ul>
+                            </div>
+                            <!-- Hand-Axes action -->
+                            <div class="action_item_type_action">
+                                <p id="actionHandAxe" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/weapon.png" height="10px"> Hand-Axe <small>(action)</small></p>
+                                <ul id="actionHandAxeDesc" class="action_item_description">
+                                    <li>1d6 Slashing</li>
+                                    <li>Light</li>
+                                    <li>Throw [20/60]</li>
+                                </ul>
+                            </div>
+                            <!-- Hook action -->
+                            <div class="action_item_type_action">
+                                <p id="actionHook" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/weapon.png" height="10px"> Hook <small>(action)</small></p>
+                                <ul id="actionHookDesc" class="action_item_description">
+                                    <li>1d8 Piercing</li>
+                                </ul>
+                            </div>
+                            <!-- Javelin action -->
+                            <div class="action_item_type_action">
+                                <p id="actionJavelin" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/weapon.png" height="10px"> Javelin <small>(action)</small></p>
+                                <ul id="actionJavelinDesc" class="action_item_description">
+                                    <li>1d6 Piercing</li>
+                                    <li>Throw [30/120]</li>
+                                </ul>
+                            </div>
+                            <!-- Shield "Capitã Maria" action -->
+                            <div class="action_item_type_action">
+                                <p id="actionCapitaMaria" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/weapon.png" height="10px"> Shield "Capitã Maria" <small>(action)</small></p>
+                                <ul id="actionCapitaMariaDesc" class="action_item_description">
+                                    <li>As an action, the shield will spread it's arms and grapple the target</li>
+                                </ul>
+                            </div>
+                            <!-- War-Hammer action -->
+                            <div class="action_item_type_action">
+                                <p id="actionWarHammer" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/weapon.png" height="10px"> War-Hammer <small>(action)</small></p>
+                                <ul id="actionWarHammerDesc" class="action_item_description">
+                                    <li>1d8 Bludgeoning</li>
+                                    <li>Versatile [1d10]</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Skill table -->
                     <div class="ability_skill">
-                        <p><label id="abilityAcrobatics">1</label> Acrobatics</p>
-                        <p><label id="abilityAnimalHandling">1</label> Animal Handling</p>
-                        <p><label id="abilityArcana">1</label> Arcana</p>
-                        <p><label id="abilityAthletics">1</label> Athletics</p>
+                        <p><label id="abilityAcrobatics">0</label> Acrobatics</p>
+                        <p><label id="abilityAnimalHandling">0</label> Animal Handling</p>
+                        <p><label id="abilityArcana">0</label> Arcana</p>
+                        <p><label id="abilityAthletics">0</label> Athletics</p>
                         <p><label id="abilityDeception">1</label> Deception</p>
-                        <p><label id="abilityHistory">1</label> History</p>
-                        <p><label id="abilityInsight">1</label> Insight</p>
+                        <p><label id="abilityHistory">0</label> History</p>
+                        <p><label id="abilityInsight">0</label> Insight</p>
                         <p><label id="abilityIntimidation">1</label> Intimidation</p>
-                        <p><label id="abilityInvestigation">1</label> Investigation</p>
-                        <p><label id="abilityMedicine">1</label> Medicine</p>
+                        <p><label id="abilityInvestigation">0</label> Investigation</p>
+                        <p><label id="abilityMedicine">0</label> Medicine</p>
                         <p><label id="abilityNature">1</label> Nature</p>
-                        <p><label id="abilityPerception">1</label> Perception</p>
+                        <p><label id="abilityPerception">0</label> Perception</p>
                         <p><label id="abilityPerformance">1</label> Performance</p>
-                        <p><label id="abilityPersuasion">1</label> Persuasion</p>
-                        <p><label id="abilityReligion">1</label> Religion</p>
-                        <p><label id="abilitySleightOfHands">1</label> Sleight of Hands</p>
-                        <p><label id="abilityStealth">1</label> Stealth</p>
+                        <p><label id="abilityPersuasion">0</label> Persuasion</p>
+                        <p><label id="abilityReligion">0</label> Religion</p>
+                        <p><label id="abilitySleightOfHands">0</label> Sleight of Hands</p>
+                        <p><label id="abilityStealth">0</label> Stealth</p>
                         <p><label id="abilitySurvival">1</label> Survival</p>
                     </div>
                 </div>

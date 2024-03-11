@@ -1,6 +1,4 @@
 body {
-    user-select: none;
-
     font-family: 'Times New Roman', Times, serif;
 
     background-color: #3a3a3a;
@@ -19,6 +17,8 @@ h3 {
     margin-left: 20px;
 }
 .toggleButton:hover {
+    user-select: none;
+
     cursor: pointer;
 
     color: #ffffff;
