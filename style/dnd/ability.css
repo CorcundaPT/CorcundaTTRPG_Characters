@@ -51,7 +51,6 @@
 .ability_character {
     display: grid;
     grid-template-columns: auto auto auto;
-    height: 100px;
 
     padding: 0px 5px;
     

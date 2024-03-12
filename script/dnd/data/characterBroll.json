@@ -22,7 +22,7 @@
         "charisma": 0
     },
 
-    "-commentSkill": "SKILL PROFICIENCY",
+    "-commentSkill": "SKILL PROFICIENCY, 0 - no proficiency, 1 - proficiency, 2 - expert",
     "skill": {
         "acrobatics": 0,
         "animalHandling": 0,
@@ -54,35 +54,11 @@
 
     "-commentBackpack": "BACKPACK LIST",
     "backpack": [
-        {
-            "name": "Cutelo Extensível +2",
-            "quantity": 1,
-            "effect": ["1d6 + 2 Slashing", "Finesse", "Light", "Can be extended becoing a new weapon: 2d6 + 2 Slashing; Heavy; Two-Handed", "While attuned, when the weapon hit a creature, heal the wielder for 1d12, once per turn"]
-        },
-        {
-            "name": "Hand-Axe",
-            "quantity": 2,
-            "effect": ["1d6 Slashing", "Light", "Throw (20/60)"]
-        },
-        {
-            "name": "Hook",
-            "quantity": 1,
-            "effect": ["1d8 Piercing"]
-        },
-        {
-            "name": "Javelin",
-            "quantity": 2,
-            "effect": ["1d6 Piercing", "Throw (30/120)"]
-        },
-        {
-            "name": "Shield, Capitã Maria",
-            "quantity": 1,
-            "effect": ["+2AC"]
-        },
-        {
-            "name": "War-Hammer",
-            "quantity": 1,
-            "effect": []
-        }
+        {"name": "Cutelo Extensível +2", "quantity": 1},
+        {"name": "Hand-Axe", "quantity": 2},
+        {"name": "Hook", "quantity": 1},
+        {"name": "Javelin", "quantity": 2},
+        {"name": "Shield, Capitã Maria", "quantity": 1},
+        {"name": "War-Hammer", "quantity": 1}
     ]
 }

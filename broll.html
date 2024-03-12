@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/dnd/ability.css">
         <link rel="stylesheet" href="style/dnd/backpack.css">
+        <link rel="stylesheet" href="style/dnd/feature.css">
         <script src="script/main.js"></script>
         <script src="script/dnd/ability.js"></script>
         <script src="script/dnd/backpack.js"></script>
@@ -78,7 +79,7 @@
                             <!-- Ancestral Protection action -->
                             <div class="action_item_type_passive">
                                 <p id="actionAncestralProtection" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Ancestral Protection <small>(passive)</small></p>
-                                <p id="actionAncestralProtectionDesc" class="action_item_description">Every turn, the first creature you hit, get disadvantage on attack rolls against creatures other than you, and even if the target still hit, that creature has resistance to the damage dealt.</p>
+                                <p id="actionAncestralProtectionDesc" class="action_item_description">While Raging, every turn, the first creature you hit, the target get disadvantage on attack rolls against creatures other than you, and even if the target still hit, that creature has resistance to the damage dealt.</p>
                             </div>
                             <!-- Danger Sense action -->
                             <div class="action_item_type_passive">
@@ -184,7 +185,7 @@
                             <div class="action_item_type_reaction">
                                 <p id="actionSpiritShield" onclick="toggleWindow(id)" class="toggleButton"><img src="lib/class.png" height="10px"> Spirit Shield <small>(reaction)</small></p>
                                 <ul id="actionSpiritShieldDesc" class="action_item_description">
-                                    <li>Reduce 2d6 damage of a creature you can see within 30ft of you.</li>
+                                    <li>While Raging, as a reaction, reduce 2d6 damage of a creature you can see within 30ft of you.</li>
                                 </ul>
                             </div>
                         </div>
@@ -211,6 +212,7 @@
                         <p><label id="abilitySurvival">1</label> Survival</p>
                     </div>
                 </div>
+
                 <!-- Backpack tab -->
                 <h2 id="backpack" onclick="toggleTab(id)" class="toggleButton">Backpack</h2>
                 <div id="backpackTab" class="backpack_tab">
@@ -325,6 +327,141 @@
                         <!-- Um pendente com uma cruz -->
                         <p id="backpackPendenteComCruz" onclick="toggleWindow(id)" class="toggleButton">Pendente com uma cruz</p>
                         <p id="backpackPendenteComCruzDesc" class="backpack_item_description">Um pendente dado pelo Rei de The Cross.</p>
+                    </div>
+                </div>
+
+                <!-- Features tab -->
+                <h2 id="feature" onclick="toggleTab(id)" class="toggleButton">Features</h2>
+                <div id="featureTab" class="feature_tab">
+                    <!-- Human Race features -->
+                    <h3 id="featureRace" onclick="toggleTab(id)" class="toggleButton">Human</h3>
+                    <div id="featureRaceTab" class="feature_item_tab">
+                        <!-- Human Race Ability Score -->
+                        <p id="featureRaceAbilityScore" onclick="toggleWindow(id)" class="toggleButton">Ability Score</p>
+                        <ul id="featureRaceAbilityScoreDesc" class="feature_item_description">
+                            <li>+1 Strength</li>
+                            <li>+1 Dexterity</li>
+                            <li>+1 Constitution</li>
+                            <li>+1 Intelligence</li>
+                            <li>+1 Wisdom</li>
+                            <li>+1 Charisma</li>
+                        </ul>
+                        
+                        <!-- Human Race Speed -->
+                        <p id="featureRaceSpeed" onclick="toggleWindow(id)" class="toggleButton">Speed</p>
+                        <ul id="featureRaceSpeedDesc" class="feature_item_description">
+                            <li>30ft walking</li>
+                        </ul>
+                        
+                        <!-- Human Race Language -->
+                        <p id="featureRaceLanguage" onclick="toggleWindow(id)" class="toggleButton">Language</p>
+                        <ul id="featureRaceLanguageDesc" class="feature_item_description">
+                            <li>Common</li>
+                            <li>Dwarvish</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Barbarian Class features -->
+                    <h3 id="featureClass" onclick="toggleTab(id)" class="toggleButton">Barbarian (Ancestral Guardian)</h3>
+                    <div id="featureClassTab" class="feature_item_tab">
+                        <!-- Barbarian Class Ancestral Protection -->
+                        <p id="featureClassAncestralProtection" onclick="toggleWindow(id)" class="toggleButton">Ancestral Protection</p>
+                        <div id="featureClassAncestralProtectionDesc" class="feature_item_description">
+                            <p>While Raging, every turn, the first creature you hit, the target get disadvantage on attack rolls against creatures other than you, and even if the target still hit, that creature has resistance to the damage dealt.</p>
+                        </div>
+
+                        <!-- Barbarian Class Danger Sense -->
+                        <p id="featureClassDangerSense" onclick="toggleWindow(id)" class="toggleButton">Danger Sense</p>
+                        <div id="featureClassDangerSenseDesc" class="feature_item_description">
+                            <p>Advantage on Dexterity Saving Throws against effects that you can see.</p>
+                        </div>
+
+                        <!-- Barbarian Class Extra Attack -->
+                        <p id="featureClassExtraAttack" onclick="toggleWindow(id)" class="toggleButton">Extra Attack</p>
+                        <div id="featureClassExtraAttackDesc" class="feature_item_description">
+                            <p>Attack twice on Attack action.</p>
+                        </div>
+
+                        <!-- Barbarian Class Fast Movement -->
+                        <p id="featureClassFastMovement" onclick="toggleWindow(id)" class="toggleButton">Fast Movement</p>
+                        <div id="featureClassFastMovementDesc" class="feature_item_description">
+                            <p>Increase your speed by 10ft.</p>
+                            <p>Can't wear Heavy Armor.</p>
+                        </div>
+
+                        <!-- Barbarian Class Feral Instinct -->
+                        <p id="featureClassFeralInstinct" onclick="toggleWindow(id)" class="toggleButton">Feral Instinct</p>
+                        <div id="featureClassFeralInstinctDesc" class="feature_item_description">
+                            <p>Advantage on Initiative rolls and you can't be surprised if you enter rage at the start and you aren't Incapacitated.</p>
+                        </div>
+
+                        <!-- Barbarian Class Instinctive Pounce -->
+                        <p id="featureClassInstinctivePounce" onclick="toggleWindow(id)" class="toggleButton">Instinctive Pounce</p>
+                        <div id="featureClassInstinctivePounceDesc" class="feature_item_description">
+                            <p>When you enter rage, you can move up to half your movement.</p>
+                        </div>
+
+                        <!-- Barbarian Class Primal Knowledge -->
+                        <p id="featureClassPrimalKnowledge" onclick="toggleWindow(id)" class="toggleButton">Primal Knowledge</p>
+                        <div id="featureClassPrimalKnowledgeDesc" class="feature_item_description">
+                            <p>Gain proficiency in one skill available to barbarian.</p>
+                            <ul>
+                                <li>Survival</li>
+                            </ul>
+                        </div>
+
+                        <!-- Barbarian Class Rage -->
+                        <p id="featureClassRage" onclick="toggleWindow(id)" class="toggleButton">Rage (4 uses)</p>
+                        <div id="featureClassRageDesc" class="feature_item_description">
+                            <p>On your turn, you can enter Rage as a Bonus Action.</p>
+                            <p>While Raging, you gain the following benefits if you aren't wearing Heavy Armor:</p>
+                            <ul>
+                                <li>Advantage on Strength checks and Strength Saving Throws.</li>
+                                <li>+2 Melee weapon Damage rolls.</li>
+                                <li>Resistance to Bludgeoning, Piercing, and Slashing Damage.</li>
+                            </ul>
+                            <p>You can't cast spells neither concentrate on them while raging.</p>
+                            <p>The Rage lasts for 1 minute. It ends early if you are knocked Unconscious or if you haven't taken nor dealt damage since last turn. You can also end your Rage as a Bonus Action.</p>
+                            <p>After a long rest, you regain all Rage uses.</p>
+                        </div>
+
+                        <!-- Barbarian Class Reckless Attack -->
+                        <p id="featureClassRecklessAttack" onclick="toggleWindow(id)" class="toggleButton">Reckless Attack</p>
+                        <div id="featureClassRecklessAttackDesc" class="feature_item_description">
+                            <p>Every first attack each turn, you can choose to gain advantage on all Attack rolls this turn, doing so, gives advantage on Attack rolls against you until the start of your next turn.</p>
+                        </div>
+
+                        <!-- Barbarian Class Spirit Shield -->
+                        <p id="featureClassSpiritShield" onclick="toggleWindow(id)" class="toggleButton">Spirit Shield</p>
+                        <div id="featureClassSpiritShieldDesc" class="feature_item_description">
+                            <p>While Raging, as a reaction, reduce 2d6 damage of a creature you can see within 30ft of you.</p>
+                        </div>
+
+                        <!-- Barbarian Class Unarmored Defense -->
+                        <p id="featureClassUnarmoredDefense" onclick="toggleWindow(id)" class="toggleButton">Unarmored Defense</p>
+                        <div id="featureClassUnarmoredDefenseDesc" class="feature_item_description">
+                            <p>AC = 10 + Dex Mod + Con Mod.</p>
+                            <p>You can use a Shield.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feats features -->
+                    <h3 id="featureFeats" onclick="toggleTab(id)" class="toggleButton">Feats</h3>
+                    <div id="featureFeatsTab" class="feature_item_tab">
+                        <!-- Feats Sentinel -->
+                        <p id="featureFeatsSentinel" onclick="toggleWindow(id)" class="toggleButton">Sentinel</p>
+                        <div id="featureFeatsSentinelDesc" class="feature_item_description">
+                            <ul>
+                                <li>Opportunity attacks that hit reduced the creature’s speed become to 0.</li>
+                                <li>Opportunity attack provoked even when disengage.</li>
+                                <li>As a reaction, when a creature within 5ft makes an target other than you (and without this feat), you can make a melee weapon attack against the attacking creature.</li>
+                            </ul>
+                        </div>
+                        <!-- Feats Tough -->
+                        <p id="featureFeatsTough" onclick="toggleWindow(id)" class="toggleButton">Tough</p>
+                        <div id="featureFeatsToughDesc" class="feature_item_description">
+                            <p>Gain Maximum Hit Points equal to twice you level.</p>
+                        </div>
                     </div>
                 </div>
             </div>

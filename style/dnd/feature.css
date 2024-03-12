@@ -1,0 +1,36 @@
+.feature_tab {
+    display: none;
+}
+
+/* all boxes with the same property */
+.feature_item_tab, .feature_item_description {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.15); 
+}
+
+/* Item tabs */
+.feature_item_tab {
+    display: none;
+
+    padding: 10px 15px;
+
+    text-align: justify;
+
+    border-radius: 10px;
+}
+/* Item description */
+.feature_item_description {
+    display: none;
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 10px;
+
+    text-align: justify;
+
+    border-radius: 5px;
+}
+/* Item description for p */
+.feature_item_description p {
+    padding-left: 10px;
+}
