@@ -12,9 +12,8 @@
         <p id="INT"></p>
         <p id="WIS"></p>
         <p id="CHA"></p>
-        
 
-        <script>
+        <!--<script>
             function fetchData() {
                 fetch('./Broll.json')
                     .then((response) => {
@@ -28,8 +27,10 @@
                     .catch(function () {
                         dataError = true;
                     })
+                
+                document.getElementById('STR').textContent = data.strength;
             }
             fetchData();
-        </script>
+        </script>-->
     </body>
 </html>
