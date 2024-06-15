@@ -7,7 +7,7 @@
         <nav></nav>
 
         <p> <span id="STR"></span> </p>
-        <p id="DEX"></p>
+        <p> <span id="DEX"></span> </p>
         <p id="CON"></p>
         <p id="INT"></p>
         <p id="WIS"></p>
@@ -23,7 +23,7 @@
                         return response.json();
                     })
                     .then((data) =>
-                        console.log(data))
+                        console.log(data.strength))
                     .catch(function () {
                         dataError = true;
                     })
